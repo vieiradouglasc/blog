@@ -29,17 +29,20 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 //Rota de Visualização
-Route::get('categorias',[CategoriaController::class, 'index'])->name('categoria.index');
+Route::get('categorias', [CategoriaController::class, 'index'])->name('categoria.index');
 
 //Rota de Formulário
-Route::get('categorias/criar',[CategoriaController::class,'formularioCriarCategoria'])->name('categoria.criar.get');
+Route::get('categorias/criar', [CategoriaController::class, 'formularioCriarCategoria'])->name('categoria.criar.get');
 
 //Rota de Criação
-Route::post('categorias/criar',[CategoriaController::class,'criarCategoria'])->name('categoria.criar.post');
+Route::post('categorias/criar', [CategoriaController::class, 'criarCategoria'])->name('categoria.criar.post');
 
 //Rota de Atualização
-Route::get('categorias/{categorias}/atualizar',[CategoriaController::class, 'formularioAtualizarCategoria'])->name('categoria.atualizar.get');
-Route::post('categorias/{categorias}/atualizar',[CategoriaController::class, 'atualizarCategoria'])->name('categoria.atualizar.post');
+Route::get('categorias/{categorias}/atualizar', [CategoriaController::class, 'formularioAtualizarCategoria'])->name('categoria.atualizar.get');
+Route::post('categorias/{categorias}/atualizar', [CategoriaController::class, 'atualizarCategoria'])->name('categoria.atualizar.post');
+
+//Rota de Deleção
+Route::delete('categorias/{categoriasid}', [CategoriaController::class, 'deletarCategoria'])->name('categoria.delete');

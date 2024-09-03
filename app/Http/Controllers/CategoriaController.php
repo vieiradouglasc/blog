@@ -34,4 +34,10 @@ class CategoriaController extends Controller
         $categorias->update($request->all());
         return redirect()->route('categoria.index');
     }
+
+    public function deletarCategoria($categoria){
+        $categoria = Categoria::find($categoria);
+        $categoria->delete();
+        return redirect()->route('categoria.index');
+    }
 }

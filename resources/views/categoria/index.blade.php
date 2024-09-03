@@ -23,8 +23,12 @@
                 <td>{{ $categoria->id }}</td>
                 <td>{{ $categoria->nome_categoria }}</td>
                 <td>
-                    <a href="{{route('categoria.atualizar.get', $categoria->id)}}" class="btn btn-info">Atualizar</a>
-                    <a href="" class="btn btn-danger">Exluir</a>
+                    <a href="{{ route('categoria.atualizar.get', $categoria->id) }}" class="btn btn-info">Atualizar</a>
+                    <form action="{{ route('categoria.delete', $categoria->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger">Excluir</button>
+                    </form>
                 </td>
             </tr>
         @endforeach
