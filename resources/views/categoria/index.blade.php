@@ -23,11 +23,11 @@
                 <td>{{ $categoria->id }}</td>
                 <td>{{ $categoria->nome_categoria }}</td>
                 <td>
-                    <a href="{{ route('categoria.atualizar.get', $categoria->id) }}" class="btn btn-info">Atualizar</a>
+                    <a href="{{ route('categoria.atualizar.get', $categoria->id) }}" class="btn btn-info btn-sm">Atualizar</a>
                     <form action="{{ route('categoria.delete', $categoria->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-danger">Excluir</button>
+                        <button class="btn btn-danger btn-sm">Excluir</button>
                     </form>
                 </td>
             </tr>
