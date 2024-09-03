@@ -22,7 +22,10 @@
             <tr>
                 <td>{{ $categoria->id }}</td>
                 <td>{{ $categoria->nome_categoria }}</td>
-                <td>-</td>
+                <td>
+                    <a href="{{route('categoria.atualizar.get', $categoria->id)}}" class="btn btn-info">Atualizar</a>
+                    <a href="" class="btn btn-danger">Exluir</a>
+                </td>
             </tr>
         @endforeach
     </x-adminlte-datatable>

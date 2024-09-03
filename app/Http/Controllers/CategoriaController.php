@@ -20,4 +20,13 @@ class CategoriaController extends Controller
         Categoria::create($request->all());
         return redirect()->route('categoria.index');
     }
+
+    public function formularioAtualizarCategoria (Categoria $categorias) {
+        return view('categoria.atualizar-categoria', compact('categorias'));
+    }
+
+    public function atualizarCategoria (Request $request, Categoria $categoria) {
+        $categoria->update($request->all());
+        return redirect()->route('categoria.index');
+    }
 }
