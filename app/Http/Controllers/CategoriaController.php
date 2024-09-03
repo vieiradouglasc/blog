@@ -25,8 +25,8 @@ class CategoriaController extends Controller
         return view('categoria.atualizar-categoria', compact('categorias'));
     }
 
-    public function atualizarCategoria (Request $request, Categoria $categoria) {
-        $categoria->update($request->all());
+    public function atualizarCategoria (Request $request, Categoria $categorias) {
+        $categorias->update($request->all());
         return redirect()->route('categoria.index');
     }
 }
