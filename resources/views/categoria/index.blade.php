@@ -16,11 +16,12 @@
 @endphp
 
 @section('content')
+    <a href="{{ route('categoria.criar.get') }}" class="btn btn-success"><i class="fa fa-plus"></i> Criar Categoria</a>
     <x-adminlte-datatable id="table1" :heads="$heads">
         @foreach ($categorias as $categoria)
             <tr>
-                <td>{{$categoria->id}}</td>
-                <td>{{$categoria->nome_categoria}}</td>
+                <td>{{ $categoria->id }}</td>
+                <td>{{ $categoria->nome_categoria }}</td>
                 <td>-</td>
             </tr>
         @endforeach

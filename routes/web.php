@@ -32,3 +32,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('categorias',[CategoriaController::class, 'index'])->name('categoria.index');
+Route::get('categorias/criar',[CategoriaController::class,'formularioCriarCategoria'])->name('categoria.criar.get');
+Route::post('categorias/criar',[CategoriaController::class,'criarCategoria'])->name('categoria.criar.post');
+
