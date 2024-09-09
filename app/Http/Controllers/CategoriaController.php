@@ -24,14 +24,14 @@ class CategoriaController extends Controller
         return redirect()->route('categoria.index');
     }
 
-    public function formularioAtualizarCategoria(Categoria $categorias)
+    public function formularioAtualizarCategoria(Categoria $categoria)
     {
-        return view('categoria.atualizar-categoria', compact('categorias'));
+        return view('categoria.atualizar-categoria', compact('categoria'));
     }
 
-    public function atualizarCategoria(Request $request, Categoria $categorias)
+    public function atualizarCategoria(Request $request, Categoria $categoria)
     {
-        $categorias->update($request->all());
+        $categoria->update($request->all());
         return redirect()->route('categoria.index');
     }
 

@@ -32,21 +32,15 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-//Rota de Visualização
+//Rotas Categoria
 Route::get('categorias', [CategoriaController::class, 'index'])->name('categoria.index');
-Route::get('publicacoes', [PublicacaoController::class, 'index'])->name('publicacao.index');
-
-//Rota de Formulário
 Route::get('categorias/criar', [CategoriaController::class, 'formularioCriarCategoria'])->name('categoria.criar.get');
-Route::get('publicacoes/criar', [PublicacaoController::class, 'formularioCriarPublicacao'])->name('publicacao.criar.get');
-
-//Rota de Criação
 Route::post('categorias/criar', [CategoriaController::class, 'criarCategoria'])->name('categoria.criar.post');
+Route::get('categorias/{categoria}/atualizar', [CategoriaController::class, 'formularioAtualizarCategoria'])->name('categoria.atualizar.get');
+Route::post('categorias/{categoria}/atualizar', [CategoriaController::class, 'atualizarCategoria'])->name('categoria.atualizar.post');
+Route::delete('categorias/{categoriaid}', [CategoriaController::class, 'deletarCategoria'])->name('categoria.delete');
+
+//Rotas Publicação
+Route::get('publicacoes', [PublicacaoController::class, 'index'])->name('publicacao.index');
+Route::get('publicacoes/criar', [PublicacaoController::class, 'formularioCriarPublicacao'])->name('publicacao.criar.get');
 Route::post('publicacoes/criar', [PublicacaoController::class, 'criarPublicacao'])->name('publicacao.criar.post');
-
-//Rota de Atualização
-Route::get('categorias/{categorias}/atualizar', [CategoriaController::class, 'formularioAtualizarCategoria'])->name('categoria.atualizar.get');
-Route::post('categorias/{categorias}/atualizar', [CategoriaController::class, 'atualizarCategoria'])->name('categoria.atualizar.post');
-
-//Rota de Deleção
-Route::delete('categorias/{categoriasid}', [CategoriaController::class, 'deletarCategoria'])->name('categoria.delete');

@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <form method="POST" action="{{ route('categoria.atualizar.post', $categorias->id) }}">
+    <form method="POST" action="{{ route('categoria.atualizar.post', $categoria->id) }}">
         @csrf
         <div class="row">
             <x-adminlte-input name="nome_categoria" label="Nome da Categoria" placeholder="Nome da Categoria"
