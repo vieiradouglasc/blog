@@ -302,11 +302,15 @@ return [
             'icon' => 'far fa-fw fa-file',
         ],
         [
+            'text' => 'Publicações',
+            'url' => 'publicacoes',
+            'icon' => 'far fa-fw fa-file',
+        ],
+        [
             'text' => 'Categorias',
             'url' => 'categorias',
             'icon' => 'far fa-fw fa-file',
         ],
-
     ],
 
     /*

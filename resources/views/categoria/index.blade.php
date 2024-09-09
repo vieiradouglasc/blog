@@ -17,6 +17,8 @@
 
 @section('content')
     <a href="{{ route('categoria.criar.get') }}" class="btn btn-success"><i class="fa fa-plus"></i> Criar Categoria</a>
+    <br>
+    <br>
     <x-adminlte-datatable id="table1" :heads="$heads">
         @foreach ($categorias as $categoria)
             <tr>

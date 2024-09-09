@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicacaoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,12 +34,15 @@ require __DIR__ . '/auth.php';
 
 //Rota de Visualização
 Route::get('categorias', [CategoriaController::class, 'index'])->name('categoria.index');
+Route::get('publicacoes', [PublicacaoController::class, 'index'])->name('publicacao.index');
 
 //Rota de Formulário
 Route::get('categorias/criar', [CategoriaController::class, 'formularioCriarCategoria'])->name('categoria.criar.get');
+Route::get('publicacoes/criar', [PublicacaoController::class, 'formularioCriarPublicacao'])->name('publicacao.criar.get');
 
 //Rota de Criação
 Route::post('categorias/criar', [CategoriaController::class, 'criarCategoria'])->name('categoria.criar.post');
+Route::post('publicacoes/criar', [PublicacaoController::class, 'criarPublicacao'])->name('publicacao.criar.post');
 
 //Rota de Atualização
 Route::get('categorias/{categorias}/atualizar', [CategoriaController::class, 'formularioAtualizarCategoria'])->name('categoria.atualizar.get');
