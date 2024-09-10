@@ -26,7 +26,7 @@
                 <td>{{ $categoria->nome_categoria }}</td>
                 <td>
                     <a href="{{ route('categoria.atualizar.get', $categoria->id) }}" class="btn btn-info btn-sm">Atualizar</a>
-                    <form action="{{ route('categoria.delete', $categoria->id) }}" method="POST">
+                    <form action="{{ route('publicacao.delete', $publicacao->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger btn-sm">Excluir</button>

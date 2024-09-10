@@ -27,10 +27,18 @@
             <tr>
                 <td>{{ $publicacao->id }}</td>
                 <td>{{ $publicacao->titulo }}</td>
-                <td>{{ $publicacao->descricao }}</td>
-                <td>{{ $publicacao->categoria_id }}</td>
-                <td>{{ $publicacao->user_id }}</td>
-                <td>Ações</td>
+                <td>{{ $publicacao->descricao_formatado }}</td>
+                <td>{{ $publicacao->categoria->nome_categoria }}</td>
+                <td>{{ $publicacao->user->name }}</td>
+                <td>
+                    <a href="{{ route('publicacao.atualizar.get', $publicacao->id) }}" class="btn btn-info btn-sm">Atualizar</a>
+                    <form action="{{ route('publicacao.delete', $publicacao->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger btn-sm">Excluir</button>
+                    </form>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </x-adminlte-datatable>

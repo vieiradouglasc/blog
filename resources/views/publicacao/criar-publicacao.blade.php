@@ -13,13 +13,13 @@
         <br>
         <br>
         <x-adminlte-input name="titulo" label="Título" placeholder="Título" fgroup-class="col-md-6" disable-feedback />
-        <x-adminlte-select name="selBasic" label="Categoria" fgroup-class="col-md-6">
+        <x-adminlte-select name="categoria_id" label="Categoria" fgroup-class="col-md-6">
             <option selected class="d-none">Selecione uma Categoria</option>
             @foreach ($categorias as $categoria)
                 <option value="{{ $categoria->id }}">{{ $categoria->nome_categoria }}</option>
             @endforeach
         </x-adminlte-select>
-        <x-adminlte-textarea name="taBasic" label="Descrição" placeholder="Insira seu texto..." fgroup-class="col-md-6" />
-        
+        <x-adminlte-textarea name="descricao" label="Descrição" placeholder="Insira seu texto..." fgroup-class="col-md-6" />
+
     </form>
 @stop

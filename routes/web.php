@@ -44,3 +44,6 @@ Route::delete('categorias/{categoriaid}', [CategoriaController::class, 'deletarC
 Route::get('publicacoes', [PublicacaoController::class, 'index'])->name('publicacao.index');
 Route::get('publicacoes/criar', [PublicacaoController::class, 'formularioCriarPublicacao'])->name('publicacao.criar.get');
 Route::post('publicacoes/criar', [PublicacaoController::class, 'criarPublicacao'])->name('publicacao.criar.post');
+Route::get('publicacoes/{publicacao}/atualizar', [PublicacaoController::class,'formularioAtualizarPublicacao'])->name('publicacao.atualizar.get');
+Route::post('publicacoes/{publicacao}/atualizar', [PublicacaoController::class,'atualizarPublicacao'])->name('publicacao.atualizar.post');
+Route::delete('publicacoes/{publicacaoid}', [PublicacaoController::class,'deletarPublicacao'])->name('publicacao.delete');
