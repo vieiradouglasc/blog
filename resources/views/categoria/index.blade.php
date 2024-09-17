@@ -25,7 +25,7 @@
             @csrf
             <div class="row">
                 <x-adminlte-input name="nome_categoria" label="Nome da Categoria" placeholder="Nome da Categoria"
-                    fgroup-class="col-md-12" disable-feedback />
+                    fgroup-class="col-md-12" enable-old-support/>
             </div>
 
             <x-adminlte-button class="mr-auto" type="submit" theme="success" label="Salvar" />

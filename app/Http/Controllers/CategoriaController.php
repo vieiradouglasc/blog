@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use App\Http\Requests\CriarCategoriaRequest;
+
 
 class CategoriaController extends Controller
 {
@@ -13,7 +15,7 @@ class CategoriaController extends Controller
         return view('categoria.index', compact('categorias'));
     }
 
-    public function criarCategoria(Request $request)
+    public function criarCategoria(CriarCategoriaRequest $request)
     {
         Categoria::create($request->all());
         return redirect()->route('categoria.index');

@@ -22,7 +22,11 @@ class CriarCategoriaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nome_categoria' => [
+                'required', 
+                'string',
+            ]
         ];
     }
 }
+

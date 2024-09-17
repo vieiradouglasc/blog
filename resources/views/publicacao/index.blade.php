@@ -22,7 +22,7 @@
 @endphp
 
 @section('content')
-    <x-adminlte-modal id="modalCriarPublicacao" title="Criar Categoria" theme="success" icon="fas fa-plus" size='md'
+    <x-adminlte-modal id="modalCriarPublicacao" title="Criar Publicação" theme="success" icon="fas fa-plus" size='md'
         disable-animations v-centered static-backdrop scrollable>
         <form method="post" action="{{ route('publicacao.criar.post') }}">
             @csrf
