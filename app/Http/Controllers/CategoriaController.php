@@ -13,11 +13,6 @@ class CategoriaController extends Controller
         return view('categoria.index', compact('categorias'));
     }
 
-    public function formularioCriarCategoria()
-    {
-        return view('categoria.criar-categoria');
-    }
-
     public function criarCategoria(Request $request)
     {
         Categoria::create($request->all());

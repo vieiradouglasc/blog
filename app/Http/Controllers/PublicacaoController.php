@@ -10,14 +10,9 @@ class PublicacaoController extends Controller
 {
     public function index()
     {
-        $publicacoes = Publicacao::where('user_id', auth()->user()->id)->get();
-        return view('publicacao.index', compact('publicacoes'));
-    }
-
-    public function formularioCriarPublicacao()
-    {
         $categorias = Categoria::all();
-        return view('publicacao.criar-publicacao', compact('categorias'));
+        $publicacoes = Publicacao::where('user_id', auth()->user()->id)->get();
+        return view('publicacao.index', compact('publicacoes', 'categorias'));
     }
 
     public function criarPublicacao(Request $request)

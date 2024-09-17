@@ -26,7 +26,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');     
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
@@ -34,7 +34,6 @@ require __DIR__ . '/auth.php';
 
 //Rotas Categoria
 Route::get('categorias', [CategoriaController::class, 'index'])->name('categoria.index');
-Route::get('categorias/criar', [CategoriaController::class, 'formularioCriarCategoria'])->name('categoria.criar.get');
 Route::post('categorias/criar', [CategoriaController::class, 'criarCategoria'])->name('categoria.criar.post');
 Route::get('categorias/{categoria}/atualizar', [CategoriaController::class, 'formularioAtualizarCategoria'])->name('categoria.atualizar.get');
 Route::post('categorias/{categoria}/atualizar', [CategoriaController::class, 'atualizarCategoria'])->name('categoria.atualizar.post');
@@ -42,7 +41,6 @@ Route::delete('categorias/{categoriaid}', [CategoriaController::class, 'deletarC
 
 //Rotas Publicação
 Route::get('publicacoes', [PublicacaoController::class, 'index'])->name('publicacao.index');
-Route::get('publicacoes/criar', [PublicacaoController::class, 'formularioCriarPublicacao'])->name('publicacao.criar.get');
 Route::post('publicacoes/criar', [PublicacaoController::class, 'criarPublicacao'])->name('publicacao.criar.post');
 Route::get('publicacoes/{publicacao}/atualizar', [PublicacaoController::class,'formularioAtualizarPublicacao'])->name('publicacao.atualizar.get');
 Route::post('publicacoes/{publicacao}/atualizar', [PublicacaoController::class,'atualizarPublicacao'])->name('publicacao.atualizar.post');
