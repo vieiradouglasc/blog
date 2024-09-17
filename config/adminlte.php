@@ -304,12 +304,12 @@ return [
         [
             'text' => 'Publicações',
             'url' => 'publicacoes',
-            'icon' => 'far fa-fw fa-file',
+            'icon' => 'far fa-fw fa-file-alt',
         ],
         [
             'text' => 'Categorias',
             'url' => 'categorias',
-            'icon' => 'far fa-fw fa-file',
+            'icon' => 'fas fa-fw fa-file-contract',
         ],
     ],
 

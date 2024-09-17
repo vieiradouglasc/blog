@@ -27,7 +27,7 @@
         <form method="post" action="{{ route('publicacao.criar.post') }}">
             @csrf
             <x-adminlte-input name="titulo" label="Título" placeholder="Título" fgroup-class="col-md-12"
-                disable-feedback />
+            enable-old-support />
             <x-adminlte-select name="categoria_id" label="Categoria" fgroup-class="col-md-12">
                 <option selected class="d-none">Selecione uma Categoria</option>
                 @foreach ($categorias as $categoria)

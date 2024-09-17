@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CriarPublicacaoRequest;
 use App\Models\Categoria;
 use App\Models\Publicacao;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class PublicacaoController extends Controller
         return view('publicacao.index', compact('publicacoes', 'categorias'));
     }
 
-    public function criarPublicacao(Request $request)
+    public function criarPublicacao(CriarPublicacaoRequest $request)
     {
         $request->merge(['user_id' => Auth()->user()->id]);
         Publicacao::create($request->all());
